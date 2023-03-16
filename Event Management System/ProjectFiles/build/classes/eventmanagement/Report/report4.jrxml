@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report4" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f5f25910-0742-434c-a182-2474a6038744">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="194"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[select * from tbl_User]]>
+	</queryString>
+	<field name="User_Id" class="java.lang.Integer"/>
+	<field name="User_Name" class="java.lang.String"/>
+	<field name="User_Age" class="java.lang.Integer"/>
+	<field name="User_Email" class="java.lang.String"/>
+	<field name="User_Password" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="287" splitType="Stretch">
+			<image>
+				<reportElement uuid="b0d1a4f9-1e21-460e-9480-2c89bd6d0fd1" x="1" y="7" width="237" height="172"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\Your Projects Icon.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="437b9927-f930-4d42-bff5-bd3d5e45596f" style="Title" x="59" y="50" width="139" height="33" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="25" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Event]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2512428d-de46-4de8-913f-24f6b01370a0" style="SubTitle" x="249" y="7" width="160" height="43"/>
+				<textElement>
+					<font fontName="Times New Roman" size="30" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Reporting]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="437b9927-f930-4d42-bff5-bd3d5e45596f" style="Title" x="59" y="83" width="151" height="33" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="25" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Management]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="437b9927-f930-4d42-bff5-bd3d5e45596f" style="Title" x="59" y="116" width="139" height="33" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="25" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8bf01473-fd89-4510-98f8-2e4d8bf222f2" x="12" y="203" width="540" height="79" isRemoveLineWhenBlank="true" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="15"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Event management is the application of project management to the creation and development of large scale events such as festivals, conferences, ceremonies, formal parties, concerts, or conventions.]]></text>
+			</staticText>
+			<frame>
+				<reportElement uuid="3886031f-4b14-414d-880c-fcc0a190ffc4" mode="Opaque" x="1" y="179" width="554" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="f33b24bb-9bf0-4f4d-9c5b-cc385ac02778" style="Column header" x="492" y="1" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="1b00bd8b-def7-4142-b73b-ecf4e644e6f3" style="Column header" x="384" y="1" width="108" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="7b9cc234-0cbc-4dc8-a582-32046e8ed2b0" style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement uuid="78c950eb-0867-40db-8d5d-7d1fd062b67f" x="273" y="50" width="136" height="116"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\icon-events.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="5cdd99c8-ce4b-4025-9858-183e6f5ad1c9" x="409" y="7" width="143" height="172"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Images\\report-icon.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4672491e-92df-4d68-9ae2-29adeddea5a6" style="Column header" x="111" y="15" width="111" height="32" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[User_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c0103e20-daa7-4913-9055-93b089417ec5" style="Column header" x="222" y="15" width="111" height="32" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[User_Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e142f852-bb77-4466-9ea5-8be5932139f3" style="Column header" x="333" y="15" width="111" height="32" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[User_Email]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="1b7eb97e-62ba-410c-9997-e8b1b3412a31" style="Detail" x="109" y="58" width="111" height="22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{User_Name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="3060e5b0-b16b-4588-9c26-81e25c88d21c" style="Detail" x="220" y="58" width="111" height="22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{User_Age}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="36981348-363f-474e-97a2-d3b9057b406b" style="Detail" x="331" y="58" width="111" height="22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{User_Email}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="8bde196d-ac29-428a-ad4a-0ccdeca94048" style="Detail" x="442" y="54" width="111" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{User_Password}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e616696b-41c3-4cf4-aa75-3a77513c8b0f" style="Detail" x="0" y="58" width="111" height="22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{User_Id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6e203b1c-5dd2-413d-b8e8-292a4941d55c" style="Column header" x="1" y="15" width="111" height="32" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[User_Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ab657843-07d9-4881-9454-717fee9f3a90" style="Column header" x="444" y="15" width="111" height="32" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[User_Password]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="171" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="85b2ba7d-198e-4b9a-af65-558c75857afa" key="table" style="table" x="59" y="34" width="421" height="110"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="f15c8042-eb1c-4c95-a2e4-ff0d12a267a7">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column uuid="e66b8d5d-ad82-4467-9329-33643da0d476" width="90">
+						<jr:tableHeader height="30" rowSpan="1"/>
+						<jr:tableFooter height="30" rowSpan="1"/>
+						<jr:columnHeader height="29" rowSpan="1"/>
+						<jr:columnFooter height="30" rowSpan="1"/>
+						<jr:detailCell height="30" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="2d8e59d3-8e07-432b-9756-d9b3abebc753" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="75" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7af03806-71af-4676-afdf-8a79e672cf8d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from tbl_User	select * from tbl_Event]]>
+	</queryString>
+	<field name="User_Id" class="java.lang.Integer"/>
+	<field name="User_Name" class="java.lang.String"/>
+	<field name="User_Age" class="java.lang.Integer"/>
+	<field name="User_Email" class="java.lang.String"/>
+	<field name="User_Password" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="156" splitType="Stretch">
+			<image>
+				<reportElement uuid="84a116d0-0847-45f9-83e8-0cdd3744f3bc" x="10" y="4" width="225" height="152"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\Your Projects Icon.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="a46209fd-e77c-4586-aac5-cb26d508a883" mode="Transparent" x="58" y="43" width="81" height="27" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Event]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c1b40147-50df-4422-8b6c-f23655fe2226" x="58" y="70" width="122" height="31" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Management]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="73dc86fd-5de5-4aef-a3b3-901c5e09382e" x="58" y="101" width="81" height="28" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[System]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="h.mm.ss a">
+				<reportElement uuid="968be84a-78ac-4163-a808-74b7d4009a5d" x="434" y="0" width="138" height="35"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="557" splitType="Stretch">
+			<image>
+				<reportElement uuid="84a116d0-0847-45f9-83e8-0cdd3744f3bc" x="180" y="226" width="0" height="4"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\Your Projects Icon.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

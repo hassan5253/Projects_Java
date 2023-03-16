@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="108e2de4-d8db-4c45-8a01-6cb4ee5e9fcb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select * from tbl_User
+select * from tbl_Event]]>
+	</queryString>
+	<field name="User_Id" class="java.lang.Integer"/>
+	<field name="User_Name" class="java.lang.String"/>
+	<field name="User_Age" class="java.lang.Integer"/>
+	<field name="User_Email" class="java.lang.String"/>
+	<field name="User_Password" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<frame>
+				<reportElement uuid="d6090be0-169f-42fa-bc9a-178620cd3896" mode="Opaque" x="0" y="70" width="802" height="32" forecolor="#000000" backcolor="#CC0000"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="d63e9575-03f9-488e-9a0d-5314abe5e1e3" x="553" y="12" width="144" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<rectangle>
+				<reportElement uuid="f1399200-5515-4b55-a1f9-4e5003d252e0" x="0" y="0" width="649" height="60"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="11b69dfd-6a81-4b74-b7f6-26a21fe3a00a" x="199" y="22" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[THIS JAni report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="66487f16-8790-4440-a860-8da262711e6f" style="Column header" x="0" y="0" width="159" height="32" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User_Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4b244e31-3f60-4fac-855b-318913c61dde" style="Column header" x="159" y="0" width="159" height="32" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b8f9681b-2be2-4352-827c-1c1ea725213f" style="Column header" x="318" y="0" width="159" height="32" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User_Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dc6cb4db-b7db-42de-9177-b3ede70238e3" style="Column header" x="477" y="0" width="159" height="32" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User_Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c7e2724-4ffe-420a-9c13-c55252119161" style="Column header" x="636" y="0" width="159" height="32" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User_Password]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<frame>
+				<reportElement uuid="2ce936e7-6326-45c6-ae17-16423a939bac" style="Row" mode="Opaque" x="0" y="0" width="797" height="39"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="ba1e3c02-5ed0-44bb-b58e-8f39e6d670c4" style="Detail" positionType="Float" x="0" y="0" width="159" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{User_Id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="cb8d13d6-282e-41d9-850d-0b0b382dc5cf" style="Detail" positionType="Float" x="159" y="0" width="159" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{User_Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="2a9d6d58-2927-4da2-9917-4e67b8e052b3" style="Detail" positionType="Float" x="318" y="0" width="159" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{User_Age}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="bdf96996-a751-46ae-b1fb-d3f8bf79dc0f" style="Detail" positionType="Float" x="477" y="0" width="159" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{User_Email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="af6453cc-4601-4c5f-8173-fffae492cbc2" style="Detail" positionType="Float" x="636" y="0" width="159" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{User_Password}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="47" splitType="Stretch">
+			<line>
+				<reportElement uuid="1c3d40c2-a66c-4dd6-a04d-3c8e33753570" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

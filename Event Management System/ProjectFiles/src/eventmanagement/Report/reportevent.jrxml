@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportevent" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bff9b759-559f-4eae-96e7-10fba00e0715">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="18"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="parameterEvent" class="java.lang.String"/>
+	<parameter name="parameterEvent1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from tbl_Event where Event_Date between $P{parameterEvent} and  $P{parameterEvent1}]]>
+	</queryString>
+	<field name="Event_Id" class="java.lang.Integer"/>
+	<field name="User_Id" class="java.lang.Integer"/>
+	<field name="Event_Date" class="java.lang.String"/>
+	<field name="Event_Time" class="java.lang.String"/>
+	<field name="Event_Title" class="java.lang.String"/>
+	<field name="Event_Colour" class="java.lang.String"/>
+	<field name="Event_Description" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="298" splitType="Stretch">
+			<image>
+				<reportElement uuid="b0d1a4f9-1e21-460e-9480-2c89bd6d0fd1" x="-11" y="7" width="237" height="182"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\Your Projects Icon.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="8bf01473-fd89-4510-98f8-2e4d8bf222f2" x="7" y="212" width="540" height="79" isRemoveLineWhenBlank="true" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="15"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Event management is the application of project management to the creation and development of large scale events such as festivals, conferences, ceremonies, formal parties, concerts, or conventions.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2512428d-de46-4de8-913f-24f6b01370a0" style="SubTitle" x="84" y="-2" width="482" height="65"/>
+				<textElement>
+					<font fontName="Times New Roman" size="43" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Upcoming Event Reporting]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="437b9927-f930-4d42-bff5-bd3d5e45596f" style="Title" x="49" y="91" width="151" height="33" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="25" isUnderline="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Management]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="437b9927-f930-4d42-bff5-bd3d5e45596f" style="Title" x="49" y="58" width="139" height="33" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="25" isUnderline="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Event]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="437b9927-f930-4d42-bff5-bd3d5e45596f" style="Title" x="49" y="124" width="139" height="33" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="25" isUnderline="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[System]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="522a109c-e61d-4b6a-97c6-d09159d5fa6a" x="244" y="76" width="160" height="113"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Images\\MasterCalendarIcon.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="2ef7366f-2749-4a80-9c34-eb8008fb4d15" x="414" y="76" width="133" height="113"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\reports_icon.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement uuid="8db1ed05-b0a3-4737-890a-b697cdcc5946" x="7" y="199" width="540" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="f76d2e0f-b61a-4128-a95f-9f2babe463fd" x="7" y="3" width="540" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0275e553-5a95-4b69-9f62-98892c3c7619" style="Column header" x="1" y="33" width="62" height="26" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Event_Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ed56f673-8842-4e72-8801-bf747dba0210" style="Column header" x="63" y="33" width="60" height="27" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[User_Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="513f23cd-259e-49af-a0da-fe5f2a97f890" style="Column header" x="123" y="33" width="79" height="27" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Event_Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d910e581-0196-4b2c-8776-354383e9f3eb" style="Column header" x="202" y="34" width="79" height="26" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Event_Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="62291010-d268-4230-871b-d92b19431f04" style="Column header" x="281" y="33" width="79" height="27" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Event_Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eff6ec1d-99b8-4265-ae85-ce2e37fc62d6" style="Column header" x="360" y="33" width="82" height="27" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Event_Colour]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2fb90b65-57f4-4f22-94ea-0228d68c9781" style="Column header" x="442" y="34" width="114" height="25" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Event_Description]]></text>
+			</staticText>
+			<frame>
+				<reportElement uuid="b6ed16f2-2e3f-4409-a022-e8ca25f2425f" mode="Opaque" x="0" y="0" width="553" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="819a378f-7e23-4403-9569-3fb1d6b02adb" style="Column header" x="507" y="4" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="665a7545-7593-4a70-88fc-402b894b383a" style="Column header" x="427" y="4" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="8159a87a-afc8-4f57-9579-0b50b3984ae2" style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement uuid="85bbc75a-7f51-46de-b586-a67ed6fdf4d2" x="2" y="60" width="553" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="85bbc75a-7f51-46de-b586-a67ed6fdf4d2" x="2" y="33" width="554" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="62" y="34" width="1" height="26"/>
+			</line>
+			<line>
+				<reportElement uuid="dce8ee1c-4b01-4a96-bd6c-3530398643ba" x="123" y="34" width="1" height="26"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="2" y="33" width="1" height="27"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="202" y="33" width="1" height="27"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="281" y="33" width="1" height="26"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="360" y="33" width="1" height="26"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="442" y="33" width="1" height="26"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="555" y="34" width="1" height="26"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<frame>
+				<reportElement uuid="d197f875-99a2-4727-80e1-c749bf0fd59f" style="Row" mode="Opaque" x="0" y="0" width="7" height="27"/>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="42a0a9e8-d22b-4d07-a453-639e3f9623ae" style="Detail" x="65" y="1" width="59" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{User_Id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="955d3ec3-2363-444a-a661-a0e793b2e521" style="Detail" x="122" y="1" width="79" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Event_Date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="fa3c0b43-c291-4c29-8c89-42ea71e0d806" style="Detail" x="201" y="1" width="79" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Event_Time}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="aafcf144-7013-42df-b0f7-f8ecfdf38a35" style="Detail" x="280" y="1" width="79" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Event_Title}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="46099d20-f88d-4bc4-b71a-f6122f23003f" style="Detail" x="438" y="1" width="115" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Event_Description}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="fd0a146f-9e3c-4c40-8515-ab1920e61e2c" style="Detail" x="359" y="1" width="79" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Event_Colour}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="7177172a-8b2d-48dc-8c5f-7d7faff84b26" x="65" y="8" width="22" height="25"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Images\\User.png"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="b7e9bd8f-1242-46f4-95e2-d86217d771c9" style="Detail" x="3" y="0" width="59" height="33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Event_Id}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="7b213111-4abf-4d9f-aba6-6c2f217f6811" x="2" y="6" width="21" height="21"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Images\\new event.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="144" splitType="Stretch">
+			<line>
+				<reportElement uuid="5c7713de-5769-4082-943c-f72501a069b1" positionType="FixRelativeToBottom" x="7" y="119" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement uuid="adbf0c10-1a51-4a95-bbac-175b760ceafc" x="-11" y="61" width="95" height="83"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Images\\1426576342_tmp_event_calendar.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="adbf0c10-1a51-4a95-bbac-175b760ceafc" x="477" y="61" width="95" height="83"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Images\\1426576342_tmp_event_calendar.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="cc6b5c2a-778f-4c8c-bce6-3665cbeff540" x="105" y="61" width="360" height="58" forecolor="#FF6600"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="40" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Event Information]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="9afbab56-2ec4-49ca-be58-860f929d7884" x="493" y="12" width="0" height="37"/>
+			</rectangle>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="7" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

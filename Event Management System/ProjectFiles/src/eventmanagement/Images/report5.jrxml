@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report5" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="caf55f30-830a-4298-808c-042e5400f25a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[select * from tbl_User]]>
+	</queryString>
+	<field name="User_Id" class="java.lang.Integer"/>
+	<field name="User_Name" class="java.lang.String"/>
+	<field name="User_Age" class="java.lang.Integer"/>
+	<field name="User_Email" class="java.lang.String"/>
+	<field name="User_Password" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="291" splitType="Stretch">
+			<image>
+				<reportElement uuid="b0d1a4f9-1e21-460e-9480-2c89bd6d0fd1" x="11" y="1" width="237" height="185"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\Your Projects Icon.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="2512428d-de46-4de8-913f-24f6b01370a0" style="SubTitle" x="248" y="1" width="303" height="55"/>
+				<textElement>
+					<font fontName="Times New Roman" size="43" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[User Reporting]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="437b9927-f930-4d42-bff5-bd3d5e45596f" style="Title" x="66" y="80" width="151" height="33" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="25" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Management]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="437b9927-f930-4d42-bff5-bd3d5e45596f" style="Title" x="66" y="47" width="139" height="33" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="25" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Event]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="437b9927-f930-4d42-bff5-bd3d5e45596f" style="Title" x="66" y="113" width="139" height="33" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="25" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8bf01473-fd89-4510-98f8-2e4d8bf222f2" x="9" y="200" width="542" height="83" isRemoveLineWhenBlank="true" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="15"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Event management is the application of project management to the creation and development of large scale events such as festivals, conferences, ceremonies, formal parties, concerts, or conventions.]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="9e1c43f9-b113-44a6-a1ad-8b7b147e2046" x="408" y="56" width="143" height="130"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\reports_icon.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="09b074c6-d599-4fee-8299-727d79009f3f" x="248" y="59" width="160" height="127"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\userreport.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement uuid="85bbc75a-7f51-46de-b586-a67ed6fdf4d2" x="11" y="199" width="540" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="85bbc75a-7f51-46de-b586-a67ed6fdf4d2" x="11" y="1" width="540" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="73" splitType="Stretch">
+			<frame>
+				<reportElement uuid="dc4120e7-7a04-45d2-857f-3095e73c2cfb" mode="Opaque" x="0" y="0" width="555" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="8c6e2235-4e4b-452f-85ba-bb16e01d1a36" style="Column header" x="513" y="4" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="a3fef4a3-49a9-4b72-bd43-aa1cc02ae663" style="Column header" x="433" y="4" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="34d901ed-cec9-4c80-ba9e-8dec4939bc2c" style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement uuid="c470d76d-3305-4e56-9b1b-d20d49031951" style="Column header" x="9" y="34" width="102" height="28" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[User_Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9861f439-3281-4ab9-8961-7bfd175a2cdf" style="Column header" x="111" y="34" width="111" height="28" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[User_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="16dc5c3b-2afa-4655-a0d1-ccd159af2ac7" style="Column header" x="222" y="35" width="111" height="27" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[User_Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9123aac0-76a0-413b-86bc-0b2ecc631038" style="Column header" x="333" y="34" width="111" height="28" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[User_Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="964f3a76-05ec-4984-9081-8793e5dbcfa7" style="Column header" x="444" y="34" width="111" height="28" forecolor="#736343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[User_Password]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="85bbc75a-7f51-46de-b586-a67ed6fdf4d2" x="9" y="62" width="546" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="85bbc75a-7f51-46de-b586-a67ed6fdf4d2" x="9" y="33" width="546" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="9" y="33" width="1" height="29"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="333" y="33" width="1" height="29"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="444" y="33" width="1" height="29"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="555" y="33" width="1" height="29"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="110" y="34" width="1" height="29"/>
+			</line>
+			<line>
+				<reportElement uuid="fb29ef0d-00f5-464e-8e7f-12c90ebd64e7" x="222" y="33" width="1" height="29"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<frame>
+				<reportElement uuid="2e192c0a-6188-4ab1-b383-d2ee22e6600b" style="Row" mode="Transparent" x="0" y="0" width="555" height="30"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="64d9e88f-3a55-4dd8-bc0c-822568ffcaf0" style="Detail" mode="Transparent" x="0" y="0" width="111" height="30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{User_Id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="283f08f4-5232-4c03-b8f3-26b2fdc67bbd" style="Detail" mode="Transparent" x="111" y="0" width="111" height="30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{User_Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="7a5da541-630a-469b-9056-5fef3e833d2f" style="Detail" mode="Transparent" x="222" y="0" width="111" height="30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{User_Age}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="8630272a-ffec-483e-8e1a-2cbb2c3e1ea3" style="Detail" mode="Transparent" x="333" y="0" width="111" height="30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{User_Email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="cb536fe7-7376-4f3e-a674-bb6e38cd465f" style="Detail" mode="Transparent" x="444" y="0" width="111" height="30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{User_Password}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement uuid="7177172a-8b2d-48dc-8c5f-7d7faff84b26" x="22" y="0" width="22" height="25"/>
+					<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Images\\User.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="94" splitType="Stretch">
+			<line>
+				<reportElement uuid="2521439c-2961-476b-9f68-7f28aa8a1978" positionType="FixRelativeToBottom" x="0" y="93" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement uuid="0e18bd65-c457-4173-844f-4e7808187efa" x="0" y="5" width="89" height="83"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\report user.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="0e18bd65-c457-4173-844f-4e7808187efa" x="462" y="5" width="89" height="83"/>
+				<imageExpression><![CDATA["E:\\iProject\\EventManagement\\EventManagement\\src\\eventmanagement\\Report\\report user.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="cc6b5c2a-778f-4c8c-bce6-3665cbeff540" x="97" y="16" width="347" height="58" forecolor="#FF6600"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="40" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[User Information]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="8" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,56 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package project;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.*;
+
+/**
+ *
+ * @author Noman ali
+ */
+public class conjoin {
+    
+    Connection objcon=null;
+    Statement   objstat=null;
+    ResultSet objset=null;
+       
+//       sql connection 
+    public Connection sqlconnect()throws Exception
+    {
+       Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+       objcon=DriverManager.getConnection("jdbc:odbc:Telephone", "sa", "123");
+       objstat=objcon.createStatement();
+       return objcon;
+    }
+//      this method is use to insert update delete in sql query 
+    public int query(String name)throws Exception
+    {
+         objcon=sqlconnect();
+         int result=objstat.executeUpdate(name);
+         if(result>0)
+         {
+           return 1;
+         }
+         else
+         {
+            return 0;
+         }
+    }
+    
+//       this method is use to select query in sql 
+    public ResultSet resultquery(String name)throws Exception
+    
+   {
+       
+       objcon=sqlconnect();
+       objset=objstat.executeQuery(name);
+       return objset;
+    }
+    
+    
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report3" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7cfd2977-faac-4124-bf92-9cbae3d01883">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="143"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[select * from tbl_User]]>
+	</queryString>
+	<field name="User_Id" class="java.lang.Integer"/>
+	<field name="User_Name" class="java.lang.String"/>
+	<field name="User_Age" class="java.lang.Integer"/>
+	<field name="User_Email" class="java.lang.String"/>
+	<field name="User_Password" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement uuid="b73ee204-3941-4a3f-9fde-1d7713f29d92" x="0" y="0" width="164" height="126"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="acaea059-d9a9-4c89-a851-d28eb7a8521d" x="603" y="-14" width="219" height="209"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="f2e159ee-5630-439b-9f33-95e1908466f6" style="Title" x="270" y="0" width="263" height="62"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bd9e1076-29d1-4ffc-9ba7-99b0f48476fe" style="SubTitle" x="303" y="62" width="196" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee SubTitle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="91c347c4-b731-4fdd-bab2-28fb8730d7ee" x="172" y="94" width="383" height="42"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor purus gravida arcu aliquam mattis. Donec et nulla libero, ut varius massa. Nulla sed turpis elit. Etiam aliquet mauris a ligula hendrerit in auctor leo lobortis.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="12e43b44-2c15-47ca-8497-b89c0c9a007d" positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="d40068f7-bd4f-4221-8b06-977c884836f1" style="Column header" x="0" y="0" width="160" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[User_Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d97e29ff-e6f7-4cd9-9a9b-db34234412ac" style="Column header" x="160" y="0" width="160" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[User_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="35817734-2b50-4295-9981-aab0e344b632" style="Column header" x="320" y="0" width="160" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[User_Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7e4f244c-3d53-4edd-b76e-fa46411b8593" style="Column header" x="480" y="0" width="160" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[User_Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8776b7ee-0074-4394-8100-5175e27889f7" style="Column header" x="640" y="0" width="160" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[User_Password]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement uuid="5272b12c-53ae-48e2-8b46-5ee4b375a2ad" style="Row" mode="Opaque" x="0" y="0" width="802" height="15"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="d14e5c90-25d8-4eaa-bc86-df474da96884" style="Detail" x="0" y="0" width="160" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{User_Id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="99bfb3b0-7bf4-40e5-836d-fc7402300f3e" style="Detail" x="160" y="0" width="160" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{User_Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="07f8a960-f139-4be2-b077-4bd2e24d1588" style="Detail" x="320" y="0" width="160" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{User_Age}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="227ef524-8318-47e9-a92f-92e00313fdab" style="Detail" x="480" y="0" width="160" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{User_Email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="32b8741b-789d-42b5-8cc8-4f271ab45f43" style="Detail" x="640" y="0" width="160" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{User_Password}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement uuid="fa3efd8a-6888-4147-b9ac-208bf801e637" positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="e76b002f-b0fb-4e84-8e09-18e3d26ff90a" mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="37de5693-d9e0-44cf-a7df-a26508a5110e" style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="71953dca-fdec-427d-a920-dad8ee19fbba" style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="a07c6eef-a626-4136-8865-9191338bd103" style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
